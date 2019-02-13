@@ -1,0 +1,16 @@
+1、寻找适合的lamp环境docker镜像，目前使用的是andrewklau/centos-lamp镜像
+
+docker pull andrewklau/centos-lamp   #下载所需镜像
+
+2、上传 礼根云 前端代码，目前本人所放目录为/mnt
+
+3、给权限，研发未说明文件具体权限，本人给所有目录权限为777，不然会报错 chomd -R 777
+
+4、启动docker容器环境
+
+docker run -tid -p 8081:80 -v /mnt:/var/www/html:Z andrewklau/centos-lamp
+
+5、前端访问测试环境（宿主机IP:8081访问）是否正常
+
+6、访问IP：192.168.1.200:8081
+
